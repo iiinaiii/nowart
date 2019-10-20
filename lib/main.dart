@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:nowart/ui/page/contents_page.dart';
 import 'package:nowart/ui/page/map/map_page.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(NowArtApp());
 
-class MyApp extends StatelessWidget {
+class NowArtApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -12,13 +13,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'nowart...'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  const MyHomePage({Key key, this.title}) : super(key: key);
 
   final String title;
 
@@ -34,7 +35,9 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: MapPage(),
+        child: MapPage.create(
+          ContentsPage.create(),
+        ),
       ),
     );
   }
