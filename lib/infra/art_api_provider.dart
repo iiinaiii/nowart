@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' show Client, Response;
 import 'package:nowart/domain/art_data_source.dart';
@@ -25,10 +27,13 @@ class ArtApiProvider extends ArtDataSource {
 
     final Xml2Json transformer = Xml2Json();
     transformer.parse(response.body);
-    final String json = transformer.toParker();
+    final String jsonStr = transformer.toParker();
     if (response.statusCode == 200) {
-      print('json::: $json');
-      return null;
+      print('json::: $jsonStr');
+      final Map<String, dynamic> eventMap = json.decode(jsonStr);
+      ArtEvents result = ArtEvents.fromJson(eventMap.values.elementAt(0));
+      print('result :::: ${result.toString()}');
+      return result;
 //      List<dynamic> iterable = json.decode(response.body);
 //      final beerList = iterable.map((dynamic model) =>
 //          BeerResponse.fromJson(model)).toList();
