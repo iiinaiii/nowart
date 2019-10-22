@@ -9,7 +9,7 @@ part of 'art_events.dart';
 ArtEvents _$ArtEventsFromJson(Map<String, dynamic> json) {
   return ArtEvents(
     events: (json['Event'] as List)
-        ?.map((e) =>
+        ?.map((dynamic e) =>
             e == null ? null : ArtEvent.fromJson(e as Map<String, dynamic>))
         ?.toList(),
   );

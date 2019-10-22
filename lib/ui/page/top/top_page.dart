@@ -1,6 +1,8 @@
 import 'package:bloc_provider/bloc_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:nowart/bloc/art_search_bloc.dart';
+import 'package:nowart/bloc/map_contents_bloc.dart';
+import 'package:nowart/ui/page/search/search_result_page.dart';
 
 class TopPage extends StatelessWidget {
   static Widget create() {
@@ -24,10 +26,7 @@ class TopPage extends StatelessWidget {
           ),
           textColor: Colors.white,
           onPressed: () {
-            artSearchBloc.fetchArtEvents(
-              lat: '35.671208',
-              lon: '139.76517',
-            );
+            BlocProvider.of<MapContentsBloc>(context).push(SearchResultPage.create());
           },
         ),
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nowart/ui/page/contents_page.dart';
 import 'package:nowart/ui/page/map/map_page.dart';
+import 'package:nowart/ui/page/map_contents_container.dart';
 
 void main() => runApp(NowArtApp());
 
@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: MapPage.create(
-          ContentsPage.create(),
+          MapContentsContainer.create(),
         ),
       ),
     );
