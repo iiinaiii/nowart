@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' show Client, Response;
 import 'package:nowart/domain/art_data_source.dart';
 import 'package:nowart/domain/entity/art_events.dart';
@@ -19,9 +19,7 @@ class ArtApiProvider extends ArtDataSource {
     @required String lat,
     @required String lon,
   }) async {
-    final String url = Uri.https(
-            AUTHORITY, PATH, {QUERY_LAT: lat, QUERY_LON: lon, 'Language': 'ja'})
-        .toString();
+    final String url = Uri.https(AUTHORITY, PATH, {QUERY_LAT: lat, QUERY_LON: lon, 'Language': 'ja'}).toString();
     final Response response = await client.get(url);
     print('response::: ${response.body.toString()}');
 

@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:nowart/domain/art_data_source.dart';
 import 'package:nowart/domain/entity/art_events.dart';
 

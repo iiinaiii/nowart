@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc_provider/bloc_provider.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:nowart/ui/page/top/top_page.dart';
 import 'package:rxdart/rxdart.dart';
 
